@@ -38,4 +38,11 @@ SELECT AVG(age) FROM students;
 
 SELECT * FROM students ORDER BY age DESC;
 
+SELECT * FROM students;
 
+
+CREATE TABLE research_papers(
+    id INT PRIMARY KEY,
+    student_id INT, FOREIGN KEY (student_id) REFERENCES students(id)
+    grade VARCHAR(2)
+)

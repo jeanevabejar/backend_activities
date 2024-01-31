@@ -257,3 +257,5 @@ class Dog
   mang_inasal = Inasal.new
   restaurant.slogan(jollibee)
   restaurant.slogan(mang_inasal) 
+
+  
