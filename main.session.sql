@@ -45,4 +45,28 @@ CREATE TABLE research_papers(
     id INT PRIMARY KEY,
     student_id INT, FOREIGN KEY (student_id) REFERENCES students(id)
     grade VARCHAR(2)
-)
+);
+
+INSERT INTO research_papers (id, student_id, grade)
+VALUES
+(1, 1, B),
+(2, 1, A),
+(3, 2, A),
+(4, 3, C),
+(5, 4, null),
+(6, 3, D),
+(7, 5, E),
+(8, 6, null),
+(9, 7, E),
+(10, 8, B);
+
+SELECT s.first_name, s.last_name, COUNT(r.id) AS number_of_research_papers
+FROM students s
+JOIN research_papers 
+ON s.id = r.student_id;
+
+SELECT s.first_name, s.last_name, r.id, r.grade
+FROM students s
+JOIN research_papers r
+ON s.id = r.student_id
+WHERE r.grade IS NULL;
