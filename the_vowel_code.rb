@@ -10,4 +10,4 @@ def decode(str)
 end
 
 puts encode("hello")
-puts decode("hello")
+puts decode("h2ll4")
