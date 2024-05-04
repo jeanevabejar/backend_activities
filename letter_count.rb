@@ -4,9 +4,11 @@ def letter_count(str)
     char.match(lowcase)
    end
 
-  string.map.with_index do |char, index|
-  [char, index]
-   end.to_h
+   new_hash = Hash.new(0)
+   string.map do |char| 
+       new_hash[char] += 1
+   end
+   new_hash
 end
 
 puts letter_count("apple")
